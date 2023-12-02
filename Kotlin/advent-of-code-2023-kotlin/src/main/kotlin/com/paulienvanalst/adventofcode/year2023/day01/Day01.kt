@@ -24,7 +24,7 @@ fun main() {
     val testInput2 = readInput("01","Day01_test2")
     part2(testInput2).println()
     check(part2(testInput2) == 281L)
-    part2(input).println()
+    part2(input).println() //55701
 }
 
 fun String.findCalibration(): Long {
@@ -39,14 +39,6 @@ fun String.findCalibration(): Long {
             return@map it
         }
     }.joinToString()
-//    val reduced = litteralDigits.keys.fold(this) { acc, s -> acc.replaceDigit(s, litteralDigits[s]!!) }
     return "${newString.first { ch -> ch.isDigit() }}${newString.last { ch -> ch.isDigit() }}".toLong()
 
-}
-
-fun String.replaceDigit(key: String, value: Int) : String {
-    if (this.contains(key)) {
-        return this.replace(key, value.toString())
-    }
-    return this
 }
