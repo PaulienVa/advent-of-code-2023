@@ -44,7 +44,6 @@ fun possibleGames(line: String): Int {
     val nrBlueImpossible = blueRegex.findAll(line).flatMap { it.groupValues }.map { it.toInt() }.count { it > MAX_BLUE }
     val isGamePossible = nrGreenImpossible == 0 && nrBlueImpossible == 0 && nrRedImpossible == 0
     return if (isGamePossible) {
-//        println("Game is possible $gameId")
         gameId ?: 0
     } else {
         0
